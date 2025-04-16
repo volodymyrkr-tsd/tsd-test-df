@@ -1,0 +1,39 @@
+{
+  "name": "DreamFactory",
+  "description": "DreamFactory API Management Platform",
+  "keywords": [
+    "php",
+    "laravel",
+    "api",
+    "dreamfactory"
+  ],
+  "website": "https://www.dreamfactory.com/",
+  "repository": "https://github.com/dreamfactorysoftware/dreamfactory",
+  "logo": "https://www.dreamfactory.com/images/common/dreamfactory-logo.svg",
+  "success_url": "/",
+  "env": {
+    "APP_ENV": {
+      "description": "Application environment",
+      "value": "production"
+    },
+    "APP_DEBUG": {
+      "description": "Enable debug mode",
+      "value": "false"
+    },
+    "DB_CONNECTION": {
+      "description": "Database connection type",
+      "value": "sqlite"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ]
+}

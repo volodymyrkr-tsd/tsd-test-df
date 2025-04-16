@@ -1,0 +1,29 @@
+api = "0.10"
+
+[buildpack]
+id = "dreamfactory/dreamfactory"
+version = "1.0.0"
+name = "DreamFactory Buildpack"
+homepage = "https://github.com/dreamfactorysoftware/df-herku-bp"
+
+[metadata]
+include-files = [
+  "bin/",
+  "lib/",
+  "buildpack.toml",
+  "README.md"
+]
+
+# Add this section to specify PHP extensions
+[metadata.extensions]
+pdo_sqlite = "*"
+sqlite3 = "*"
+
+[[stacks]]
+id = "heroku-20"
+
+[[stacks]]
+id = "heroku-22"
+
+[[stacks]]
+id = "heroku-24" 

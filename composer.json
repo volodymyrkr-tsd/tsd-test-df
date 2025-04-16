@@ -1,0 +1,15 @@
+{
+  "name": "dreamfactory/heroku-buildpack",
+  "description": "Buildpack for deploying DreamFactory to Heroku",
+  "keywords": [
+    "dreamfactory",
+    "heroku",
+    "buildpack"
+  ],
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "ext-pdo_sqlite": "*",
+    "ext-mbstring": "*"
+  }
+}

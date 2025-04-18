@@ -1,10 +1,7 @@
 api = "0.10"
 
 [buildpack]
-id = "dreamfactory/dreamfactory"
-version = "1.0.0"
 name = "DreamFactory Buildpack"
-homepage = "https://github.com/volodymyrkr-tsd/tsd-test-df"
 
 [metadata]
 include-files = [

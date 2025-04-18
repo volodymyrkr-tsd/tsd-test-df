@@ -10,6 +10,15 @@ LAYERS_DIR=$1
 PLATFORM_DIR=$2
 BUILD_DIR=$PWD
 
+# -----> Fix nested archive directory from build.io
+FIRSTDIR=$(find . -mindepth 1 -maxdepth 1 -type d | head -n 1)
+if [ -d "$FIRSTDIR" ] && [ -f "$FIRSTDIR/composer.json" ]; then
+  echo "-----> Flattening nested folder structure from build.io archive"
+  shopt -s dotglob
+  mv "$FIRSTDIR"/* "$FIRSTDIR"/.[!.]* . 2>/dev/null || true
+  rmdir "$FIRSTDIR"
+fi
+
 # Source utility functions
 BP_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")"; cd ..; pwd)
 source "$BP_DIR/lib/utils.sh"

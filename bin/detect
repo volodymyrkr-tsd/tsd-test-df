@@ -8,6 +8,19 @@ set -eo pipefail
 BUILD_DIR=$1
 PLAN_PATH=$2
 
+echo "show folder"
+echo BUILD_DIR
+pwd
+ls -la
+
+cd "$PWD"
+if [ -d tsd-test-df ]; then
+  echo "Moving contents of tsd-test-df/ to current directory..."
+  cp -r tsd-test-df/* .
+  cp -r tsd-test-df/.[!.]* . 2>/dev/null || true
+  rm -rf tsd-test-df
+fi
+
 # Check if this is a DreamFactory app
 if [ -f "$BUILD_DIR/composer.json" ] && grep -q "dreamfactory" "$BUILD_DIR/composer.json"; then
     echo "DreamFactory application detected"

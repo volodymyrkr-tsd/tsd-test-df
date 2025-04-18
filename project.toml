@@ -20,17 +20,9 @@ include = [
   "composer.lock"
 ]
 
-[[build.buildpacks]]
-id = "paketo-buildpacks/php"
-version = "0.5.0"
 
 [[build.buildpacks]]
-id = "paketo-buildpacks/nginx"
-version = "0.5.0"
-
-[[build.buildpacks]]
-id = "dreamfactory/dreamfactory"
-uri = "https://github.com/volodymyrkr-tsd/tsd-test-df/blob/main/df-herku-bp.cnb"
+uri = "https://github.com/volodymyrkr-tsd/tsd-test-df"
 
 [[build.env]]
 name = "BP_PHP_VERSION"
